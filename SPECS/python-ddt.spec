@@ -7,7 +7,7 @@ different test data, and make it appear as multiple test cases.}
 
 
 Name:           python-%{srcname}
-Version:        1.4.4
+Version:        1.6.0
 Release:        1%{?dist}
 Summary:        Python library to multiply test cases
 License:        MIT
@@ -63,6 +63,15 @@ Summary:        %{summary}
 
 
 %changelog
+* Mon Aug 22 2022 Joel Capitao <jcapitao@redhat.com> - 1.6.0-1
+- Latest upstream, resolves: rhbz#2089550
+
+* Fri Jul 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
+* Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 1.4.4-2
+- Rebuilt for Python 3.11
+
 * Thu Apr 21 2022 Carl George <carl@george.computer> - 1.4.4-1
 - Latest upstream, resolves: rhbz#1938360
 - Convert to pyproject macros
