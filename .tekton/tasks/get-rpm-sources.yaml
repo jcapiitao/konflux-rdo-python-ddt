@@ -1,0 +1,23 @@
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  annotations:
+    tekton.dev/tags: rpm-build
+  name: get-rpm-sources
+spec:
+  description: |-
+    Download source files referenced by a spec file.
+    Source: https://github.com/jcapiitao/konflux-rdo-prefetch-sources-container-image
+  steps:
+    - name: download
+      image: "quay.io/jcapitao/konflux-rdo-prefetch-sources-container-image:latest"
+      script: |
+        set -x
+        git clone https://git.centos.org/rpms/$(params.package-name).git repo
+        cd repo
+        git checkout c9s-sig-cloud-openstack-zed
+        bash /centos-git-common/get_sources.sh
+        move SOURCES/* "$(workspaces.sources.path)/source"
+  workspaces:
+    - name: sources
