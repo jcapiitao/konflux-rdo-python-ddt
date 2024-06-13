@@ -134,17 +134,17 @@ spec:
       workspaces:
         - name: sources
           workspace: workspace
-    #- name: rpmbuild-x86-64
-    #  runAfter:
-    #    - get-rpm-sources
-    #  params:
-    #    - name: PLATFORM
-    #      value: linux/amd64
-    #  workspaces:
-    #    - name: sources
-    #      workspace: workspace
-    #  taskRef:
-    #    name: rpmbuild
+    - name: rpmbuild-x86-64
+      runAfter:
+        - get-rpm-sources
+      params:
+        - name: PLATFORM
+          value: linux/amd64
+      workspaces:
+        - name: sources
+          workspace: workspace
+      taskRef:
+        name: rpmbuild
   workspaces:
     - name: workspace
     - name: git-auth
