@@ -1,7 +1,7 @@
 %global srcname ddt
 %global common_description %{expand:
 DDT (Data-Driven Tests) allows you to multiply one test case by running it with
-different test data, and make it appear as multiple test cases.}
+different test data, and make it appear as multiple test cases. }
 
 %bcond_without  tests
 
